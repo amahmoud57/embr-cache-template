@@ -1,0 +1,22 @@
+platform: nodejs
+platformVersion: "20"
+autoDeploy: true
+
+run:
+  port: 3000
+  startCommand: node server/index.js
+
+cache:
+  enabled: true
+  mode: "embedded"
+  maxMemory: 128
+  evictionPolicy: "allkeys-lru"
+
+static:
+  spaFallback: true
+  headers:
+    "*.js": "public, max-age=31536000, immutable"
+    "*.css": "public, max-age=31536000, immutable"
+
+healthCheck:
+  path: /health
