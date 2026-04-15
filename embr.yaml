@@ -8,9 +8,8 @@ run:
 
 cache:
   enabled: true
-  mode: "managed"
-  maxMemory: 128
-  evictionPolicy: "allkeys-lru"
+  external:
+    connectionName: "azure-redis"
 
 static:
   spaFallback: true
