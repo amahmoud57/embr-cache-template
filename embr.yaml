@@ -8,8 +8,7 @@ run:
 
 cache:
   enabled: true
-  external:
-    connectionName: "azure-redis"
+  mode: managed
 
 static:
   spaFallback: true
